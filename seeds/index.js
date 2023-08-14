@@ -1,26 +1,27 @@
-const seedExercise = require('./seedExercise');
-const seedRoutine = require('./seedRoutine');
-const seedUser = require('./seedUser');
-const seedUserData = require('./seedUserData');
-
 const sequelize = require('../config/connections');
+const seedUser = require('./seedUser');
+const seedRoutine = require('./seedRoutine');
+const seedExercise = require('./seedExercise');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
-  console.log('\n----- DATABASE SYNCED -----\n');
-  await seedExercise();
-  console.log('\n----- EXERCISES SEEDED -----\n');
+  try {
+    await sequelize.sync({ force: true });
+    console.log('\n----- DATABASE SYNCED -----\n');
 
-  await seedRoutine();
-  console.log('\n----- ROUTINES SEEDED -----\n');
+    await seedUser();
+    console.log('\n----- USERS SEEDED -----\n');
 
-  await seedUser();
-  console.log('\n----- USERS SEEDED -----\n');
+    await seedRoutine();
+    console.log('\n----- ROUTINES SEEDED -----\n');
 
-  await seedUserData();
-  console.log('\n----- USER DATA SEEDED -----\n');
+    await seedExercise();
+    console.log('\n----- EXERCISES SEEDED -----\n');
 
-  process.exit(0);
+    process.exit(0);
+  } catch (error) {
+    console.error('Error seeding database:', error);
+    process.exit(1);
+  }
 };
 
 seedAll();
