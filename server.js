@@ -14,7 +14,7 @@ const sess = {
   saveUninitialized: true,
 };
 
-app.engine('handlebars', exphbs());
+app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
 app.use(express.json());

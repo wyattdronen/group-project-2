@@ -6,7 +6,10 @@ router.get('/', withAuth, async (req, res) => {
   try {
     const userId = req.session.userId;
     const user = await User.findByPk(userId, {
-      include: [{ model: Routine }],
+      include: [
+        { model: UserData },
+        { model: Routine, include: [{ model: Exercise }] }
+      ],
     });
 
     res.render('home', { user }); 
