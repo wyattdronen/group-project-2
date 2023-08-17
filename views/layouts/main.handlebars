@@ -14,14 +14,14 @@
     <header class="display-flex justify-space-between align-center p-2 headerstyling">
       <h1>
         <span role="img" aria-label="money">💸 💪</span>
-        <a class="greentextcolor " href="/">GymGenius: Building Workouts, Building You</a>
+        <a class="greentextcolor" href="/">GymGenius: Building Workouts, Building You</a>
       </h1>
       <nav>
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/profile" class="button">Profile</a>
+        <button class="button no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <button class="primary-button" onclick="window.location.href='/login'">Sign Up</button>
         {{/if}}
       </nav>
     </header>
