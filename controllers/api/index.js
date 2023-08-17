@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-// const user_dataRoutes = require('./user_dataRoutes');
+const userDataRoutes = require('./userDataRoutes');
 // const routineRoutes = require('./routineRoutes');
 // const exerciseRoutes = require('./exerciseRoutes');
 
 router.use('/users', userRoutes);
-// router.use('/user_data', user_dataRoutes);
+router.use('/userdata', userDataRoutes);
 // router.use('/routine', routineRoutes);
 // router.use('/exercise', exerciseRoutes)
 
