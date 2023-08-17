@@ -1,8 +1,8 @@
 const withAuth = require('../utils/auth');    
 const router = require ('express').Router();
-const { User, Routine } = require('../models');
+const { User, UserData, Exercise, Routine } = require('../models');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const userId = req.session.userId;
     const user = await User.findByPk(userId, {
