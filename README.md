@@ -1,5 +1,7 @@
 # Group 2 Project
+![Alt text](./public/image/FitnessHomepage.png)
 
+https://github.com/wyattdronen/group-project-2
 ## Description
 
 This is an interactive fitness application.  Users are able to sign up and login to their profile and navigate the website.  They can logout when they are finished.
