@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while fetching data.' });
   }
 });
-router.get('/bmi', withAuth, (req, res) => {
+router.get('/bmi', (req, res) => {
   res.render('bmi');
 });
 
