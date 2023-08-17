@@ -1,7 +1,20 @@
 # Group 2 Project
 ![Alt text](./public/image/FitnessHomepage.png)
 
+![Alt text](./public/image/BMICalculator.png)
+
+![Alt text](./public/image/SignupLogin.png)
+
+![Alt text](./public/image/AboutFinal.png)
+
 https://github.com/wyattdronen/group-project-2
+
+## Group Members
+Cody Anderson
+Ben Poole
+Wyatt Dronen
+George Haworth
+
 ## Description
 
 This is an interactive fitness application.  Users are able to sign up and login to their profile and navigate the website.  They can logout when they are finished.
