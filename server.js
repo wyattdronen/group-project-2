@@ -1,16 +1,33 @@
+const path = require('path');
 const express = require('express');
-const db = require('./config/connections');
-const routes = require('./controllers/api');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const sequelize = require('./config/connections');
 
-const PORT = 3001;
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-app.use(express.urlencoded({ extended: true }));
+const sess = {
+  secret: 'super secret key',
+  resave: false,
+  saveUninitialized: true,
+};
+
+const hbs = exphbs.create({})
+app.engine('handlebars', hbs.engine)
+// app.engine('handlebars', exphbs())
+// app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "main"}));
+app.set('view engine', 'handlebars');
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session(sess));
+
 app.use(routes);
 
-db.once('open', () => {
-    app.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-    });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });

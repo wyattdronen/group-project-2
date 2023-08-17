@@ -1,0 +1,149 @@
+.headerstyling{
+  background-color: #0044A0;
+}
+
+.greentextcolor {
+  color: #00FF99;
+}
+.greentextcolor:hover {
+  color: #00FF99;
+}
+
+.primary-button {
+  background-color: #0044A0;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.primary-button:hover {
+  background-color: #FFFFFF;
+  color: #0044A0;
+}
+
+.bodytext {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+} 
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#bmiForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #E0E0E0;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+#bmiForm label {
+  font-weight: bold;
+}
+
+#bmiForm input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #E0E0E0;
+  border-radius: 3px;
+}
+
+#bmiForm button[type="submit"] {
+  background-color: #0044A0;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#bmiForm button[type="submit"]:hover {
+  background-color: #002A66;
+}
+
+#result {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #E0E0E0;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  text-align: center; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  font-size: 18px;
+  color: #555555;
+  font-weight: bold;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0044A0;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.section-contact {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 20px;
+}
+
+.section-contact a {
+  color: #0044A0;
+  text-decoration: none;
+ 
+}
+
+.section-contact a:hover {
+  color: #FF6B6B;
+}
+
+.profile-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #E0E0E0;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0044A0;
+  margin-bottom: 20px;
+}
+
+.profile-text {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 20px;
+}
