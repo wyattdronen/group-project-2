@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {Exercise, User, UserData, Routine } = require('../../models');
-const withAuth = require('../../utils/auth')
+// const withAuth = require('../../utils/auth')
 // get all exercises
 router.get('/', async (req, res) => {
     try {
