@@ -10,10 +10,10 @@
 https://github.com/wyattdronen/group-project-2
 
 ## Group Members
-Cody Anderson ( <br> )
-Ben Poole ( <br> )
-Wyatt Dronen ( <br> )
-George Haworth ( <br> )
+Cody Anderson <br>
+Ben Poole <br>
+Wyatt Dronen <br>
+George Haworth <br>
 
 ## Description
 
