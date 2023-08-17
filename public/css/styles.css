@@ -85,3 +85,65 @@ h3 {
   font-weight: bold;
 }
 
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0044A0;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.section-contact {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 20px;
+}
+
+.section-contact a {
+  color: #0044A0;
+  text-decoration: none;
+ 
+}
+
+.section-contact a:hover {
+  color: #FF6B6B;
+}
+
+.profile-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #E0E0E0;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0044A0;
+  margin-bottom: 20px;
+}
+
+.profile-text {
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 20px;
+}
