@@ -18,7 +18,9 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'An error occurred while fetching data.' });
   }
 });
-router.get('/bmi', (req, res) => {
+router.get('/bmi',
+//  withAuth,
+ (req, res) => {
   res.render('bmi');
 });
 
@@ -26,7 +28,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile',
+//  withAuth, 
+ async (req, res) => {
   try {
     const userId = req.session.userId;
     const user = await User.findByPk(userId);
@@ -42,7 +46,9 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-router.get('/routine', withAuth, async (req, res) => {
+router.get('/routine',
+//  withAuth, 
+ async (req, res) => {
   try {
     const userId = req.session.userId;
     const user = await User.findByPk(userId, {
