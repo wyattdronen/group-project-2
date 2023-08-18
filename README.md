@@ -2,6 +2,8 @@
 
 GymGenius is a comprehensive fitness and workout management web application designed to empower individuals on their journey to an improved physical well-being. This application offers a range of tools, resources, and features aimed at enhancing users' fitness experiences.
 
+# Heroku Deployment
+https://dashboard.heroku.com/apps/fitness-tracker-1
 
 ## Tech Stack
 
