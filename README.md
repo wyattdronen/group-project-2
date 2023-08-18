@@ -79,6 +79,3 @@ To deploy this project follow this link:
 - [@cody-and](https://github.com/cody-and)
 - [@wyattdronen](https://github.com/wyattdronen)
 - [@bpoole53](https://github.com/bpoole53)
-
-
-
