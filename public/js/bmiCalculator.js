@@ -10,9 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const heightFeet = parseFloat(form.heightFeet.value);
     const heightInches = parseFloat(form.heightInches.value);
 
-    // Convert height to centimeters and weight to kilograms
-    const height = (heightFeet * 12 + heightInches) * 2.54; // Conversion: inches to cm
-    const weightKg = weight * 0.45359237; // Conversion: pounds to kg
+    const height = (heightFeet * 12 + heightInches) * 2.54; //conversion to cm 
+    const weightKg = weight * 0.45359237; //conversion to kg
 
     calculateBMI(age, weightKg, height);
   });

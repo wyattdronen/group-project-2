@@ -1,8 +1,18 @@
 <div class="text-center">
-<h2 class="section-heading">{{name}}</h2>
-<p class="section-text">{{duration}}</p>
-<p class="section-text">Created by {{user.name}}</p>
-<p>
-  <button class="primary-button" onclick="window.location.href=''">Start this routine</button>
-</p>
+  <h2 class="section-heading">Routines</h2>
+
+  <div id="routine-container">
+  </div>
+    {{#each routines}}
+      <div class="routine-card">
+        <h3>{{this.name}}</h3>
+        <p class="section-text">Duration: {{this.duration}}</p>
+        <p class="section-text">Created by: {{this.User.name}}</p>
+        <p>
+          <a href="/start-routine/{{this.id}}" class="primary-button">Start this routine</a>
+        </p>
+      </div>
+    {{/each}}
 </div>
+
+<script src="/js/routine.js"></script>

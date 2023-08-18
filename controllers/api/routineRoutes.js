@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Routine } = require('../../models');
+const { Routine, User, Exercise } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -12,7 +12,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(201).json(newRoutine);
   } catch (err) {
-    res.status(400).json({error: 'An error occurred while posting the routine.'});
+    res.status(400).json({ error: 'An error occurred while posting the routine.' });
   }
 });
 
@@ -33,6 +33,28 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(201).json(routineData);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const routines = await Routine.findAll({
+      attributes: ['id', 'name', 'duration'],
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Exercise,
+          attributes: ['name', 'type_of_exercise', 'max_weight'],
+        },
+      ],
+    });
+
+    res.status(200).json(routines);
+  } catch (err) {
+    res.status(500).json({ error: 'An error occurred while fetching routines.' });
   }
 });
 
