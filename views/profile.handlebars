@@ -1,51 +1,39 @@
 <div class="row">
   <div class="col-auto">
-    <h2 class="profile-heading">Welcome back, {{name}}!</h2>
-    <p class="profile-text">Height: {{User_data.height}}</p>
-    <p class="profile-text">Weight: {{User_data.weight}}</p>
-    <p class="profile-text">Weight Goal: {{User_data.weightGoal}}</p>
+    <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a Workout Routine:</h3>
+    <h3>Add an Exercise:</h3>
 
-    <form class="form new-workout-form">
+    <form class="form new-exercise-form">
       <div class="form-group">
-        <label for="workout-name">Routine name:</label>
-        <input class="form-input" type="text" id="workout-name" name="workout-name" />
+        <label for="exercise-name">Exercise name:</label>
+        <input class="form-input" type="text" id="exercise-name" name="exercise-name" />
       </div>
       <div class="form-group">
-        <label for="workout-duration">Duration (minutes):</label>
-        <input class="form-input" type="number" id="workout-duration" name="workout-duration" />
+        <label for="exercise-type">Type of exercise:</label>
+        <select class="form-input" id="exercise-type" name="exercise-type">
+          <option value="cardio">Cardio</option>
+          <option value="strength">Strength Training</option>
+          <option value="flexibility">Flexibility</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="workout-intensity">Intensity:</label>
-        <input class="form-input" type="text" id="workout-intensity" name="workout-intensity" />
+        <label for="max-weight">Max weight (lbs):</label>
+        <input class="form-input" type="number" id="max-weight" name="max-weight" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <label for="routine-id">Routine ID:</label>
+        <input class="form-input" type="text" id="routine-id" name="routine-id" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Exercise</button>
       </div>
     </form>
   </div>
-
-  {{#if routine.length}}
-  <div class="col-md-6 workout-list">
-    <h3>Current Workout Routines:</h3>
-
-    {{#each routine as |routine|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/routine/{{routine.id}}">{{routine.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{routine.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
 
 <script src="/js/profile.js"></script>

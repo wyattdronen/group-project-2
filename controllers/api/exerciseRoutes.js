@@ -1,37 +1,41 @@
 const router = require('express').Router();
 const { Exercise } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
-    const exercises = await Exercise.find();
-    res.json(exercises);
-  } catch (error) {
-    res.status(500).json({ error: 'An error occurred while fetching exercises.' });
-  }
-});
+    const { exerciseName, exerciseType, maxWeight, routineId } = req.body;
 
-router.post('/', async (req, res) => {
-  try {
-    const newExercise = await Exercise.create(req.body);
+    const newExercise = await Exercise.create({
+      name: exerciseName,
+      type_of_exercise: exerciseType,
+      max_weight: maxWeight,
+      routine_id: routineId
+    });
+
     res.status(201).json(newExercise);
   } catch (error) {
     res.status(400).json({ error: 'Invalid data. Exercise could not be created.' });
   }
 });
 
-router.delete('/:id', async (req, res) => {
-  const { id } = req.params;
-
+router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const deletedExercise = await Exercise.findByIdAndDelete(id);
+    const exerciseData = await Exercise.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
 
-    if (!deletedExercise) {
-      return res.status(404).json({ error: 'Exercise not found.' });
+    if (!exerciseData) {
+      res.status(404).json({ message: 'No exercise found with this id!' });
+      return;
     }
 
-    res.json({ message: 'Exercise deleted successfully.' });
-  } catch (error) {
-    res.status(500).json({ error: 'An error occurred while deleting the exercise.' });
+    res.status(201).json(exerciseData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
