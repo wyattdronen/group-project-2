@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/bmi', withAuth, (req, res) => {
+router.get('/bmi', (req, res) => {
   res.render('bmi');
 });
 

@@ -1,10 +1,21 @@
-.headerstyling{
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+}
+
+.headerstyling {
   background-color: #0044A0;
 }
 
 .greentextcolor {
   color: #00FF99;
 }
+
 .greentextcolor:hover {
   color: #00FF99;
 }
@@ -29,7 +40,7 @@
   color: #333333;
   margin: 0;
   padding: 0;
-} 
+}
 
 h3 {
   font-size: 32px;
@@ -118,7 +129,6 @@ h3 {
 .section-contact a {
   color: #0044A0;
   text-decoration: none;
- 
 }
 
 .section-contact a:hover {
