@@ -34,28 +34,14 @@ router.get('/login', (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userId = req.session.userId;
-    const user = await User.findByPk(userId, {
-      include: [{ model: UserData }],
-    });
+    const user = await User.findByPk(userId);
 
-    if (!user) {
-      console.log('User not found'); // Add this line for debugging
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    console.log('User data:', user);
-
-    res.render('profile', {
-      name: user.name,
-      User_data: user.UserData,
-      logged_in: true,
-    });
+    res.render('profile', { user });
   } catch (err) {
-    console.error(err); // Log the error for debugging
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching data.' });
   }
 });
-
 
 router.get('/about', (req, res) => {
   res.render('about');

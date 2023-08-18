@@ -20,8 +20,6 @@
         {{#if logged_in}}
         <a href="/profile" class="button">Profile</a>
         <button class="button no-button" id="logout">Logout</button>
-        {{else}}
-        <button class="primary-button" onclick="window.location.href='/login'">Sign Up</button>
         {{/if}}
       </nav>
     </header>
@@ -31,11 +29,6 @@
     <footer>
     </footer>
   </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>

@@ -1,14 +1,15 @@
-const newFormHandler = async (event) => {
+const newExerciseFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#routine-name').value.trim();
-  const duration = document.querySelector('#routine-duration').value.trim();
-  const intensity = document.querySelector('#routine-intensity').value.trim();
+  const exerciseName = document.querySelector('#exercise-name').value.trim();
+  const exerciseType = document.querySelector('#exercise-type').value.trim();
+  const maxWeight = document.querySelector('#max-weight').value.trim();
+  const routineId = document.querySelector('#routine-id').value.trim();
 
-  if (name && duration && intensity) {
-    const response = await fetch(`/api/routine`, {
+  if (exerciseName && exerciseType && maxWeight && routineId) {
+    const response = await fetch(`/api/exercise`, {
       method: 'POST',
-      body: JSON.stringify({ name, duration, intensity }),
+      body: JSON.stringify({ exerciseName, exerciseType, maxWeight, routineId }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,31 +18,11 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create new workout routine');
-    }
-  }
-};
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/routine/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete workout routine');
+      alert('Failed to create new exercise');
     }
   }
 };
 
 document
-  .querySelector('.new-routine-form')
-  .addEventListener('submit', newFormHandler);
-
-document
-  .querySelector('.routine-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('.new-exercise-form')
+  .addEventListener('submit', newExerciseFormHandler);
