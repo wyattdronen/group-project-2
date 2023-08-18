@@ -17,10 +17,8 @@
         <a class="greentextcolor" href="/">GymGenius: Building Workouts, Building You</a>
       </h1>
       <nav>
-        {{#if logged_in}}
-        <a href="/profile" class="button">Profile</a>
-        <button class="button no-button" id="logout">Logout</button>
-        {{/if}}
+        <button class="primary-button" onclick="window.location.href='/about'">About Us</button>
+        <button class="primary-button" onclick="window.location.href='/bmi'">BMI calculator</button>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
